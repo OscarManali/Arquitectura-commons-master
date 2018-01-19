@@ -19,10 +19,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Paulo Cesar Canale
- */
+
 public class Client {
 
     /**

@@ -3,16 +3,17 @@ package ar.com.sancord.commons.dto;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-
 
 public class ComprobanteCabeceraDTO implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4061484646691969748L;
 	private long nCarga;
 	private String tipoCompr;
 	private String tipoFormulario;
-	private String talonario;
+	private int talonario;
 	private int nComprobante;
 	private String modFacturacion;
 	private String tipCompr;
@@ -22,10 +23,8 @@ public class ComprobanteCabeceraDTO implements Serializable {
 	private int nroFacA;
 	private String codFormaPago;
 	private int nroFormPago;
-
-
 	private int codIVA;
-	private int numeroCuenta;
+	private long numeroCuit;
 	private int nroCuenta;
 	private int numeroPersona;
 	private String apellido;
@@ -45,7 +44,7 @@ public class ComprobanteCabeceraDTO implements Serializable {
 	private int fecVtoNeto;
 	private int moneda;
 	private Double cotizacion;
-	private Double nroEmpresa;
+	private int nroEmpresa;
 	private int impresion;
 	private String incDec;
 	private String operador;
@@ -56,7 +55,8 @@ public class ComprobanteCabeceraDTO implements Serializable {
 	private String texto2;
 	private int estado;
 	private String resFacNada;
-	private int facturaSN;
+// 0= no 1= si
+	private int seFactura;
 	private int CondVta;
 	private String numeraAutSN;
 	private int cantiCopia;
@@ -67,7 +67,7 @@ public class ComprobanteCabeceraDTO implements Serializable {
 	private int cantHojas;
 	private int norSecImpre;
 	private int cantHojaImpr;
-	private int imprimeCai;
+	private String imprimeCai;
 	private int codCai;
 	private int talcobimpro;
 	private int nroSecCobimpro;
@@ -104,6 +104,8 @@ public class ComprobanteCabeceraDTO implements Serializable {
 	private long nroprocesogencarga;
 	private int pendienteOk;
 
+
+
 	public long getnCarga() {
 		return nCarga;
 	}
@@ -128,11 +130,11 @@ public class ComprobanteCabeceraDTO implements Serializable {
 		this.tipoFormulario = tipoFormulario;
 	}
 
-	public String getTalonario() {
+	public int getTalonario() {
 		return talonario;
 	}
 
-	public void setTalonario(String talonario) {
+	public void setTalonario(int talonario) {
 		this.talonario = talonario;
 	}
 
@@ -216,12 +218,12 @@ public class ComprobanteCabeceraDTO implements Serializable {
 		this.codIVA = codIVA;
 	}
 
-	public int getNumeroCuenta() {
-		return numeroCuenta;
+	public long getNumeroCuit() {
+		return numeroCuit;
 	}
 
-	public void setNumeroCuenta(int numeroCuenta) {
-		this.numeroCuenta = numeroCuenta;
+	public void setNumeroCuit(long numeroCuit) {
+		this.numeroCuit = numeroCuit;
 	}
 
 	public int getNroCuenta() {
@@ -376,11 +378,11 @@ public class ComprobanteCabeceraDTO implements Serializable {
 		this.cotizacion = cotizacion;
 	}
 
-	public Double getNroEmpresa() {
+	public int getNroEmpresa() {
 		return nroEmpresa;
 	}
 
-	public void setNroEmpresa(Double nroEmpresa) {
+	public void setNroEmpresa(int nroEmpresa) {
 		this.nroEmpresa = nroEmpresa;
 	}
 
@@ -464,12 +466,12 @@ public class ComprobanteCabeceraDTO implements Serializable {
 		this.resFacNada = resFacNada;
 	}
 
-	public int getFacturaSN() {
-		return facturaSN;
+	public int getSeFactura() {
+		return seFactura;
 	}
 
-	public void setFacturaSN(int facturaSN) {
-		this.facturaSN = facturaSN;
+	public void setSeFactura(int seFactura) {
+		this.seFactura = seFactura;
 	}
 
 	public int getCondVta() {
@@ -552,11 +554,11 @@ public class ComprobanteCabeceraDTO implements Serializable {
 		this.cantHojaImpr = cantHojaImpr;
 	}
 
-	public int getImprimeCai() {
+	public String getImprimeCai() {
 		return imprimeCai;
 	}
 
-	public void setImprimeCai(int imprimeCai) {
+	public void setImprimeCai(String imprimeCai) {
 		this.imprimeCai = imprimeCai;
 	}
 
